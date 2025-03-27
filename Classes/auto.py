@@ -35,13 +35,33 @@ class auto:
         else:
             print("Estado el auto: Ya dejame dsecansar por favor") 
 
-auto_jefferson=auto("Toyota","Corolla",2020)
+# auto_jefferson=auto("Toyota","Corolla",2020)
 
-print(f"Informacion del auto inicial: ")
-auto_jefferson.mostrar_informacion()
-print(f"El kilometraje ahora es de: {auto_jefferson.actualizar_kilometraje(1000)}")
-auto_jefferson.mostrar_informacion()
-print(f"Informacion de kilometros recorridos del auto tras los viajes {auto_jefferson.realizar_viaje()}")
-auto_jefferson.estado_auto()
-print("Informacion del auto final: ")
-auto_jefferson.mostrar_informacion()
+    @staticmethod
+    def comparar_kilometraje(auto1,auto2):
+        if auto1.kilometraje==auto2.kilometraje:
+            return "Los kilometrajes son iguales"
+        return "Los kilometrejes son diferentes"
+    
+    def aumentar_kilom(kilometros):
+        sumKilom=kilometros+100
+        return sumKilom
+
+    @classmethod
+    def toyota_auto(cls):
+        marca="Toyota"
+        modelo="Hilux"
+        anio=2025
+        kilometraje=0
+        return cls(marca,modelo,anio,kilometraje)
+    
+    @classmethod
+    def auto_usado(cls, marca, modelo, anio, kilometraje):
+        return cls(marca, modelo, anio, kilometraje)
+
+
+
+
+
+
+
