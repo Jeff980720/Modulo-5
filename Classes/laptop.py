@@ -19,11 +19,20 @@ class laptop:
             "MARCA":f"{self.marca}",
             "PROCESADOR":f"{self.procesador}",
             "MEMORIA RAM":"OK" if self.memoria>=8 else "AUMENTAR MEMORIA RAM",
-            "Disco Duro":self.espacio_disco,
-            "Duracion de bateria":f"{self.duracion_bateria} HORAS",
+            # "Disco Duro":self.espacio_disco,
+            # "Duracion de bateria":f"{self.duracion_bateria} HORAS",
             "BATERIA":"OK" if random.choice([True,False]) else "CAMBIA DE BATERIA"
         }
         return resultado
+    
+    def realizar_informe_uso(self):
+        resultado_informe={
+            "Tipo":"Generica",
+            "Uso recomendado":"Tareas cotidianas",
+            "Horas de uso":5,
+            "Diagnostico actual":self.realizar_diagnostico_sistema()
+        }
+        return resultado_informe
 
     @staticmethod
     def comparar_costo(laptop1,laptop2):
